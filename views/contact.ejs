@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .input-part {
+            margin-bottom: 20px;
+        }
+        .input-part .form-group {
+            margin-bottom: 15px;
+        }
+        .output-review {
+            width: 100%;
+            margin-top: 20px;
+        }
+        .review-card {
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .review-card h5 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .review-card p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .rating {
+            display: inline-block;
+            unicode-bidi: bidi-override;
+            direction: rtl;
+        }
+        .rating > input {
+            display: none;
+        }
+        .rating > label {
+            position: relative;
+            display: inline-block;
+            width: 1em;
+            font-size: 1.5rem;
+            color: #ffa600;
+            cursor: pointer;
+        }
+        .rating > label:before {
+            content: '★';
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .rating > label:hover:before,
+        .rating > label:hover ~ label:before,
+        .rating > input:checked ~ label:before {
+            color: #ffcc00;
+        }
+    </style>
+</head>
+<body>
+    <%- include('header.ejs') %>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <h2 class="text-center mb-4">Contact Us</h2>
+                <form action="/submit-review" method="POST" class="input-part">
+                    <div class="form-group">
+                        <label for="name">Your Name:</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="review">Your Review:</label>
+                        <textarea class="form-control" id="review" name="review" rows="4" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="rating">Rating:</label>
+                        <div class="rating">
+                            <input type="radio" id="star5" name="rating" value="5">
+                            <label for="star5"></label>
+                            <input type="radio" id="star4" name="rating" value="4">
+                            <label for="star4"></label>
+                            <input type="radio" id="star3" name="rating" value="3">
+                            <label for="star3"></label>
+                            <input type="radio" id="star2" name="rating" value="2">
+                            <label for="star2"></label>
+                            <input type="radio" id="star1" name="rating" value="1">
+                            <label for="star1"></label>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Review</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+    <%- include('output-review.ejs') %>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Add click event listener to each star
+        document.querySelectorAll('.rating input[type="radio"]').forEach(radio => {
+            radio.addEventListener('click', () => {
+                // Clear all stars
+                document.querySelectorAll('.rating label').forEach(label => {
+                    label.style.color = '';
+                });
+                // Color stars up to the clicked one
+                let clickedStar = radio.nextElementSibling;
+                while (clickedStar) {
+                    clickedStar.style.color = '#ffcc00';
+                    clickedStar = clickedStar.previousElementSibling;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

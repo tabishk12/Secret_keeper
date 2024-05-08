@@ -1,0 +1,18 @@
+<form method="post"> 
+    <form method="post"> 
+        <label class="input form-label text-light" >Enter Name</label>
+        <input type="text" name="name" class="input form-label text-light">
+
+        <label class="input form-label text-light" >Enter Your secret</label>
+        <input type="text" name="secret"  class="input form-label text-light" >
+
+       <button name="button" class="btn-primary"> submit</button>
+    </form>
+</form>
+<script>
+    // Function to clear the input fields
+    function clearFields() {
+        document.getElementsByName('name')[0].value = '';
+        document.getElementsByName('secret')[0].value = '';
+    }
+</script>

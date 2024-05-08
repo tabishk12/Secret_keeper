@@ -1,0 +1,21 @@
+{
+  "name": "new-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs-mate": "^4.0.0",
+    "express-session": "^1.17.3",
+    "mongodb": "^6.5.0",
+    "mongoose": "^8.0.4",
+    "nodemon": "^3.0.2",
+    "uuid": "^9.0.1"
+  }
+}

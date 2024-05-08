@@ -1,0 +1,23 @@
+<!-- read.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Secret</title>
+</head>
+<body class=" bg-dark">
+    <%- include('header.ejs') %>
+    <div class="container">
+        <h1 class="text-light"> Secret </h1>
+        <div class="card  NC">
+            <div class="card-body">
+                <h5 class="card-title"><%= post.title %></h5>
+                <p class="card-text"><%= post.content %></p>
+                <a href="/" class="btn btn-primary  btn-sm p-1" >Back to Home</a>
+            </div>
+        </div>
+    </div>
+    <!-- <%- include('footer.ejs') %> -->
+</body>
+</html>

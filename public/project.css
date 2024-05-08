@@ -1,0 +1,55 @@
+body {
+    background-image: url("../img/secret.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px; 
+    font-size: 24px;
+    font-weight: bold;
+}
+.transparent-form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+    border: 2px solid #007bff;
+    backdrop-filter: blur(10px);
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.form-check-input {
+    margin-top: 5px;
+}
+
+.form-check-label {
+    margin-left: 5px;
+}
+
+.NC{
+    
+    width:100VW;
+}

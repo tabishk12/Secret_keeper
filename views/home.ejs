@@ -1,0 +1,41 @@
+<title>Home page </title>
+<body>
+<%- include('header.ejs') %>
+
+<hr class="text-light"/>
+<br/>
+<div class="container">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <h2>Welcome to the Secret Keeper App</h2>
+                    <p>This application allows users to create, store, and manage their secrets securely.</p>
+                    <h3>Features:</h3>
+                    <ul>
+                        <li>User Authentication: Users can register, login, and logout securely.</li>
+                        <li>Compose Secrets: Users can compose and publish their secrets.</li>
+                        <li>View Secrets: Users can view their own secrets and read them in detail.</li>
+                        <li>Delete Secrets: Users can delete their secrets when they are no longer needed.</li>
+                    </ul>
+                    <h3>How to Use:</h3>
+                    <ol>
+                        <li>Register or login to your account.</li>
+                        <li>Compose your secret by providing a title and content.</li>
+                        <li>View your secrets on the home page. Click "Read more..." to view the full content.</li>
+                        <li>Delete a secret by clicking the trash icon next to it.</li>
+                        <li>Logout when done.</li>
+                    </ol>
+                    <p>Start sharing your secrets safely!</p>
+                </div>
+            </div>
+        </div>    
+    </body>
+    
+    </html>
+    
+    <!-- <% if (typeof secrets !== 'undefined' && secrets.length > 0) { %>
+        <%- include('main.ejs', { secrets: secrets }) %>
+    <% } else { %>
+        <p>No secrets found.</p>
+    <% } %>
+     -->

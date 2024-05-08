@@ -1,0 +1,70 @@
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .output-review {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .review-card {
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        padding: 20px;
+        width: calc(33.33% - 20px);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease-in-out;
+        box-sizing: border-box;
+    }
+
+    .review-card:hover {
+        transform: translateY(-5px);
+    }
+
+    .review-card h5 {
+        margin-bottom: 5px;
+        font-size: 16px; /* Adjust font size */
+        font-weight: bold; /* Make text bold */
+    }
+
+    .review-card p {
+        margin-bottom: 15px;
+        font-size: 14px; /* Adjust font size */
+        line-height: 1.5; /* Increase line height for better readability */
+    }
+
+    .rating {
+        font-size: 18px; /* Adjust font size */
+        color: #ffc107;
+    }
+</style>
+<body>
+    <div class="output-review">
+        <% reviews.forEach(review => { %>
+            <div class="review-card">
+                <h5><%= review.name.charAt(0).toUpperCase() + review.name.slice(1) %></h5>
+                <p><%= review.review.charAt(0).toUpperCase() + review.review.slice(1) %></p>
+                <div class="rating">
+                    <% for(let i = 5; i >= 1; i--) { %>
+                        <% if (i <= review.rating) { %>
+                            &#9733; <!-- Filled Star symbol -->
+                        <% } else { %>
+                            &#9734; <!-- Empty Star symbol -->
+                        <% } %>
+                    <% } %>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
