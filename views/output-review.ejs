@@ -1,49 +1,69 @@
-<style>
-    body {
-        margin: 0;
-        padding: 0;
-    }
-    
-    .output-review {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        padding: 20px;
-        box-sizing: border-box;
-    }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Review Cards</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .output-review {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-    .review-card {
-        background-color: #f8f9fa;
-        border: 1px solid #dee2e6;
-        border-radius: 8px;
-        padding: 20px;
-        width: calc(33.33% - 20px);
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease-in-out;
-        box-sizing: border-box;
-    }
+        .review-card {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            width: calc(33.33% - 20px); /* Default width for larger screens */
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            box-sizing: border-box;
+        }
 
-    .review-card:hover {
-        transform: translateY(-5px);
-    }
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
 
-    .review-card h5 {
-        margin-bottom: 5px;
-        font-size: 16px; /* Adjust font size */
-        font-weight: bold; /* Make text bold */
-    }
+        .review-card h5 {
+            margin-bottom: 5px;
+            font-size: 16px; /* Adjust font size */
+            font-weight: bold; /* Make text bold */
+        }
 
-    .review-card p {
-        margin-bottom: 15px;
-        font-size: 14px; /* Adjust font size */
-        line-height: 1.5; /* Increase line height for better readability */
-    }
+        .review-card p {
+            margin-bottom: 15px;
+            font-size: 14px; /* Adjust font size */
+            line-height: 1.5; /* Increase line height for better readability */
+        }
 
-    .rating {
-        font-size: 18px; /* Adjust font size */
-        color: #ffc107;
-    }
-</style>
+        .rating {
+            font-size: 18px; /* Adjust font size */
+            color: #ffc107;
+        }
+
+        @media (max-width: 991px) {
+            .review-card {
+                width: calc(50% - 20px); /* Adjust width for medium screens */
+            }
+        }
+
+        @media (max-width: 576px) {
+            .review-card {
+                width: 100%; /* Full width for small screens */
+            }
+        }
+    </style>
+</head>
 <body>
     <div class="output-review">
         <% reviews.forEach(review => { %>
@@ -68,3 +88,4 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+</html>
